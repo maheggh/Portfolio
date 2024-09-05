@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coffee Shop
+* source:	https://sketchfab.com/3d-models/coffee-shop-3c1aa6f9c758406b9ebbf3df94f2e022
+* author:	3d.xyz (https://sketchfab.com/webuild)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coffee Shop" (https://sketchfab.com/3d-models/coffee-shop-3c1aa6f9c758406b9ebbf3df94f2e022) by 3d.xyz (https://sketchfab.com/webuild) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
