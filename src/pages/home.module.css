@@ -1,0 +1,73 @@
+/* Home.module.css */
+.heroContainer {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: fadeIn 20s ease-out infinite;
+}
+
+.subHeroTitle {
+    font-size: 2rem;
+    padding: 40px;
+    animation: fadeIn 20s ease-out infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+
+.heroTitle,
+.subHeroTitle {
+    padding: 1.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.heroTitle {
+    font-family: var(--font-grotesk);
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 6rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    margin: 10rem 0;
+    z-index: 30;
+}
+
+/* Styles specifically for the hero subtitle */
+.subHeroTitle {
+    font-family: var(--font-sora);
+    /* Use Sora for the subtitle */
+    font-weight: 300;
+    /* Lighter weight for a softer feel */
+    font-size: 1.5rem;
+    /* Slightly smaller font size for differentiation */
+    color: #b0bec5;
+    /* Softer blue-gray color */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    /* Subtle text shadow for readability */
+    margin: 0.5rem 0;
+    z-index: 30;
+}
