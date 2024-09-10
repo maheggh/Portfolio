@@ -4,7 +4,12 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import HeroImg from "../assets/home.jpg";
 
 const Navbar = () => {
-  const [openNavigation, setOpenNavigation] = React.useState(false);
+  const handleScroll = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="header flex items-center justify-between px-4 py-2 bg-gray-100">
@@ -16,30 +21,24 @@ const Navbar = () => {
         <img src={HeroImg} alt="click here to go to the frontpage" />
       </NavLink>
       <nav className="flex text-lg gap-7 font-medium">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `blue-gradient_text ${isActive ? "text-blue-500" : "text-black"}`
-          }
+        <button
+          onClick={() => handleScroll("about")}
+          className="text-black blue-gradient_text focus:outline-none"
         >
           About
-        </NavLink>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            `blue-gradient_text ${isActive ? "text-blue-500" : "text-black"}`
-          }
+        </button>
+        <button
+          onClick={() => handleScroll("projects")}
+          className="text-black blue-gradient_text focus:outline-none"
         >
           Projects
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `blue-gradient_text ${isActive ? "text-blue-500" : "text-black"}`
-          }
+        </button>
+        <button
+          onClick={() => handleScroll("contact")}
+          className="text-black blue-gradient_text focus:outline-none"
         >
           Contact
-        </NavLink>
+        </button>
       </nav>
     </header>
   );
