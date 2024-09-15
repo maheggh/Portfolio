@@ -1,49 +1,60 @@
 .heroContainer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     width: 100%;
     height: 80vh;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 2rem;
+    left: 2rem;
     z-index: 10;
-    padding: 2rem;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
 }
 
 .introTitle {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    justify-self: center;
+    justify-self: start;
     align-self: start;
     font-size: 1.2rem;
-    /* Adjusted for mobile */
     margin: 0;
     animation: fadeIn 20s ease-out infinite;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .heroTitle {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    justify-self: center;
-    align-self: center;
-    font-size: 2.5rem;
-    /* Adjusted for mobile */
+    justify-self: start;
+    align-self: start;
+    font-size: 3rem;
     margin: 0;
     animation: fadeIn 20s ease-out infinite;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .subHeroTitle {
-    grid-column: 1 / 2;
+    grid-column: 2 / 2;
     grid-row: 3 / 4;
-    justify-self: center;
-    align-self: end;
+    justify-self: start;
+    align-self: start;
     font-size: 1.5rem;
-    /* Adjusted for mobile */
     margin: 0;
     animation: fadeIn 20s ease-out infinite;
+    color: #b0bec5;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fadeIn {
@@ -63,107 +74,11 @@
     }
 }
 
-.heroTitle,
-.subHeroTitle {
-    padding: 1rem;
-    border-radius: 5px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-}
-
-.heroTitle {
-    font-family: var(--font-grotesk);
-    font-weight: 500;
-    line-height: 4rem;
-    /* Adjusted for mobile */
-    color: #ffffff;
-    margin: 0;
-}
-
-.subHeroTitle {
-    font-family: var(--font-sora);
-    font-weight: 300;
-    color: #b0bec5;
-    margin: 0;
-}
-
-.bubbleContainer {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000;
-    /* Dark background for contrast */
-}
-
-.bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    opacity: 0.6;
-    pointer-events: none;
-    /* Prevent interactions with the bubbles */
-    animation: float 10s infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: translateY(-100vh) scale(1);
-        opacity: 0.4;
-    }
-
-    100% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0.6;
-    }
-}
-
-/* Adjust bubble sizes and animation delays */
-.bubble:nth-child(1) {
-    width: 50px;
-    height: 50px;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.bubble:nth-child(2) {
-    width: 70px;
-    height: 70px;
-    left: 30%;
-    animation-delay: 2s;
-}
-
-.bubble:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    left: 50%;
-    animation-delay: 4s;
-}
-
-.bubble:nth-child(4) {
-    width: 90px;
-    height: 90px;
-    left: 70%;
-    animation-delay: 6s;
-}
-
-.bubble:nth-child(5) {
-    width: 60px;
-    height: 60px;
-    left: 90%;
-    animation-delay: 8s;
-}
-
-
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
     .heroContainer {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        left: 1rem;
+        bottom: 1rem;
     }
 
     .introTitle {
@@ -172,11 +87,12 @@
 
     .heroTitle {
         font-size: 2rem;
-        line-height: 3rem;
+        padding: 0.8rem 1.2rem;
     }
 
     .subHeroTitle {
         font-size: 1.25rem;
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -195,7 +111,5 @@
 .mobileImage {
     width: 100%;
     height: auto;
-    /* Maintain aspect ratio */
     object-fit: cover;
-    /* Cover the container while preserving aspect ratio */
 }
