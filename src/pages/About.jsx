@@ -45,8 +45,9 @@ const About = () => {
         <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
           I&apos;m originally from Skien, currently living in Elverum. I enjoy
           creating beautiful and simplistic web-designs, experimenting with new
-          technologies, and finding new ways to engage users. In my spare time,
-          I love painting, photography, and hiking.
+          technologies, and finding new ways to engage users. <br />
+          <br />
+          In my spare time, I love painting, 3d-modeling, and exercising.
           <br />
           <br />
           Contact me to discuss your next web adventure!

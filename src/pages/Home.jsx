@@ -44,18 +44,38 @@ const ThreeDModel = ({ modelPath }) => {
 };
 
 const Home = () => {
-  const projectRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="relative">
       <div className="h-screen w-full relative">
-        <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
-          <directionalLight intensity={2} position={[500, 500, 500]} />
-          <directionalLight intensity={1} position={[0, 0, -50]} />
-          <ambientLight intensity={1} />
-          <ThreeDModel modelPath="../src/assets/3d/scene.gltf" />
-          <OrbitControls enableZoom={false} />
-        </Canvas>
+        {isMobile ? (
+          <div className={styles.mobileImageContainer}>
+            <img
+              src="../src/assets/3d/3d.jpg"
+              alt="3D Model"
+              className={styles.mobileImage}
+            />
+          </div>
+        ) : (
+          <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
+            <directionalLight intensity={2} position={[500, 500, 500]} />
+            <directionalLight intensity={1} position={[0, 0, -50]} />
+            <ambientLight intensity={1} />
+            <ThreeDModel modelPath="../src/assets/3d/scene.gltf" />
+            <OrbitControls enableZoom={false} />
+          </Canvas>
+        )}
 
         <div className={styles.heroContainer}>
           <div>

@@ -1,0 +1,143 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.homeLink {
+    display: flex;
+    align-items: center;
+}
+
+.homeIcon {
+    width: 40px;
+    /* Adjust size as needed */
+    height: auto;
+}
+
+.menuContainer {
+    position: relative;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: 0.3s ease;
+    position: absolute;
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2 {
+    top: 13px;
+}
+
+.bar3 {
+    top: 26px;
+}
+
+.menuButton.open .bar1 {
+    transform: rotate(45deg);
+    top: 13px;
+}
+
+.menuButton.open .bar2 {
+    opacity: 0;
+}
+
+.menuButton.open .bar3 {
+    transform: rotate(-45deg);
+    top: 13px;
+}
+
+.navMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.navMenu.open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navItem {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.navItem:hover {
+    background: #f1f1f1;
+}
+
+.navItem:last-child {
+    border-bottom: none;
+}
+
+@media (min-width: 769px) {
+    .menuButton {
+        display: none;
+        /* Hide menu button on larger screens */
+    }
+
+    .navMenu {
+        position: static;
+        opacity: 1;
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .navItem {
+        border: none;
+        padding: 0 1rem;
+    }
+}
