@@ -5,22 +5,22 @@ const Footer = () => {
     {
       name: "GitHub",
       url: "https://github.com/maheggh",
-      image: "../src/assets/socials/github.png",
+      image: "../assets/socials/github.png",
     },
     {
       name: "Email",
       url: "mailto:martinheggholmen@gmail.com",
-      image: "../src/assets/socials/email.png",
+      image: "../assets/socials/email.png",
     },
     {
       name: "Instagram",
       url: "https://instagram.com/heggyart",
-      image: "../src/assets/socials/instagram.png",
+      image: "../assets/socials/instagram.png",
     },
     {
       name: "ArtStation",
       url: "https://artstation.com/maheggh",
-      image: "../src/assets/socials/artstation.png",
+      image: "../assets/socials/artstation.png",
     },
   ];
 

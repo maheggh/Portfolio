@@ -3,19 +3,19 @@ import React from "react";
 const projects = [
   {
     title: "Mafia game",
-    image: "../src/assets/projects/project1.png",
+    image: "../assets/projects/project1.png",
     link: "https://heggh.no/potatogame/Queen%20of%20potato/index.html",
     description: "An interactive multiplayer Mafia game with unique twists.",
   },
   {
     title: "Sustainability diary",
-    image: "../src/assets/projects/project2.png",
+    image: "../assets/projects/project2.png",
     link: "https://example.com/project2",
     description: "Track your sustainability goals and progress with ease.",
   },
   {
     title: "Assessment card game",
-    image: "../src/assets/projects/project3.JPG",
+    image: "../assets/projects/project3.JPG",
     link: "https://example.com/project3",
     description: "A fun card game designed to enhance learning assessments.",
   },

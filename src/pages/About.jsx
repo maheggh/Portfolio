@@ -35,7 +35,7 @@ const About = () => {
         {/* Avatar Image */}
         <div className="flex justify-center">
           <img
-            src="../src/assets/hero/avatar.png"
+            src="../assets/hero/avatar.png"
             alt="an avatar of me"
             className="w-48 h-48 rounded-full shadow-lg"
           />

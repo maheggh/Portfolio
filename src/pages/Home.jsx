@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import styles from "./Home.module.css";
 import Projects from "./Projects";
 import About from "./About";
-import Contact from "./Contact"; // Import the Contact component
+import Contact from "./Contact";
 
 const ThreeDModel = ({ modelPath }) => {
   const gltf = useLoader(GLTFLoader, modelPath);
@@ -62,7 +62,7 @@ const Home = () => {
         {isMobile ? (
           <div className={styles.mobileImageContainer}>
             <img
-              src="../src/assets/3d/3d.jpg"
+              src="../assets/3d/3d.jpg"
               alt="3D Model"
               className={styles.mobileImage}
             />
@@ -72,7 +72,7 @@ const Home = () => {
             <directionalLight intensity={2} position={[500, 500, 500]} />
             <directionalLight intensity={1} position={[0, 0, -50]} />
             <ambientLight intensity={1} />
-            <ThreeDModel modelPath="../src/assets/3d/scene.gltf" />
+            <ThreeDModel modelPath="../assets/3d/scene.gltf" />
             <OrbitControls enableZoom={false} />
           </Canvas>
         )}
