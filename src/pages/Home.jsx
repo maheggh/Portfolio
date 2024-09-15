@@ -94,7 +94,7 @@ const Home = () => {
         <Projects />
       </div>
 
-      <div id="contact" className="min-h-screen">
+      <div id="contact" className="">
         <Contact />
       </div>
     </div>
