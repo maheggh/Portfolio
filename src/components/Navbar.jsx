@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import HeroImg from "../assets/home.jpg";
+import HeroImg from "/assets/home.jpg";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
@@ -26,14 +25,6 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); // Close the menu after scrolling
-    }
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -43,27 +34,47 @@ const Navbar = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close the menu if open
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    setIsMenuOpen(false); // Close the menu if open
+  };
+
   return (
     <header className="fixed w-full top-0 z-50 bg-gray-100 dark:bg-black shadow-md">
       <div className="flex items-center justify-between w-full p-4">
-        <NavLink to="/" aria-label="Home">
+        <button
+          onClick={scrollToTop}
+          aria-label="Home"
+          className="focus:outline-none"
+        >
           <img src={HeroImg} alt="Home" className="w-10 h-auto rounded-lg" />
-        </NavLink>
+        </button>
         <nav className="hidden md:flex text-lg gap-7 font-medium items-center">
           <button
-            onClick={() => handleScroll("about")}
+            onClick={() => scrollToSection("about")}
             className="text-black dark:text-white focus:outline-none"
           >
             About
           </button>
           <button
-            onClick={() => handleScroll("projects")}
+            onClick={() => scrollToSection("projects")}
             className="text-black dark:text-white focus:outline-none"
           >
             Projects
           </button>
           <button
-            onClick={() => handleScroll("contact")}
+            onClick={() => scrollToSection("contact")}
             className="text-black dark:text-white focus:outline-none"
           >
             Contact
@@ -81,7 +92,7 @@ const Navbar = () => {
           </button>
         </nav>
         <button
-          className="md:hidden flex flex-col justify-center items-center p-2 z-50"
+          className="md:hidden flex flex-col justify-center items-center p-2 z-50 focus:outline-none"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -110,35 +121,45 @@ const Navbar = () => {
           transitionProperty: "height, opacity",
         }}
       >
-        <button
-          onClick={() => handleScroll("about")}
-          className="text-black dark:text-white focus:outline-none text-2xl py-4"
-        >
-          About
-        </button>
-        <button
-          onClick={() => handleScroll("projects")}
-          className="text-black dark:text-white focus:outline-none text-2xl py-4"
-        >
-          Projects
-        </button>
-        <button
-          onClick={() => handleScroll("contact")}
-          className="text-black dark:text-white focus:outline-none text-2xl py-4"
-        >
-          Contact
-        </button>
-        <button
-          onClick={toggleDarkMode}
-          className="mt-4 flex items-center justify-center p-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition focus:outline-none"
-          aria-label="Toggle dark mode"
-        >
-          {isDarkMode ? (
-            <SunIcon className="w-6 h-6 text-yellow-500" />
-          ) : (
-            <MoonIcon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-          )}
-        </button>
+        {isMenuOpen && (
+          <>
+            <button
+              onClick={scrollToTop}
+              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+            >
+              Contact
+            </button>
+            <button
+              onClick={toggleDarkMode}
+              className="mt-4 flex items-center justify-center p-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition focus:outline-none"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? (
+                <SunIcon className="w-6 h-6 text-yellow-500" />
+              ) : (
+                <MoonIcon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+              )}
+            </button>
+          </>
+        )}
       </nav>
     </header>
   );

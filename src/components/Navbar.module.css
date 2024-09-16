@@ -74,7 +74,7 @@
     height: 0;
     overflow: hidden;
     background: #f8f9fa;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease, opacity 0.3s ease;
     z-index: 50;
     /* Ensures menu is above most elements */
     display: flex;
@@ -84,7 +84,7 @@
 
 .mobileMenu.dark {
     background: #000;
-    color: #030000;
+    color: #ffffff;
 }
 
 .mobileMenuOpen {
