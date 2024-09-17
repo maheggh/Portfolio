@@ -25,5 +25,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps # Try switching the protocol
           local-dir: dist/
-          server-dir: /www/ # Replace with the correct path on your server
+          server-dir: /www/
