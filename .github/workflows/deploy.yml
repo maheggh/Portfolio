@@ -1,19 +1,22 @@
-name: Deploy Website
+name: FTP Deploy
 
 on:
   push:
     branches:
-      - main
+      - main # Deploys when changes are pushed to the main branch
+    pull_request:
+      branches:
+        - main # Deploys when a pull request is merged into the main branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
@@ -24,12 +27,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to FTP server
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
-          server-dir: /
-          method: ftp
+          ftp-server: ${{ secrets.FTP_HOST }} # Default FTP port is 21
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist # Adjust this path if your build output is elsewhere
+          server-dir: ${{ secrets.FTP_PATH }}
+          dry-run: false # Set to true to test without uploading
+          dangerous-clean-slate: true # Deletes files on the server not in the local-dir (use with caution)
