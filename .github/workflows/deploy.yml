@@ -19,12 +19,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: lukka/ftp-deploy-action@v1.0.0
+      - name: Deploy to FTP server
+        uses: sebastianpopp/ftp-action@v1.1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
-          server-dir: /www
-          protocol: ftps
+          localDir: dist/
+          remoteDir: /www
