@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Deploy website
 
 on:
   push:
@@ -6,35 +6,24 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to FTP server
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
-
-      - name: Clear node_modules and package-lock.json
+      - name: Install dependencies and build
         run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
+          npm install
+          npm run build
 
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
-          server-dir: /
-          method: ftp
+          local-dir: dist/ # Ensure this ends with a slash
+          server-dir: /path/on/your/server/
