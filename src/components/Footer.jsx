@@ -19,7 +19,7 @@ const Footer = () => {
     },
     {
       name: "ArtStation",
-      url: "https://artstation.com/maheggh",
+      url: "https://artstation.com/marhegg",
       image: "../assets/socials/artstation.png",
     },
   ];
