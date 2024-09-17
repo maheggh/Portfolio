@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
