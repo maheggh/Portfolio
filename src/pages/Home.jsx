@@ -93,15 +93,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div id="about">
+      <div id="about" className="py-20">
         <About />
       </div>
 
-      <div id="projects">
+      <div id="projects" className="py-20">
         <Projects />
       </div>
 
-      <div id="contact" className="">
+      <div id="contact" className="py-20">
         <Contact />
       </div>
     </div>
