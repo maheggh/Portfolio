@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footer.module.css"; // Import the CSS module
+import styles from "../components/Footer.module.css";
 
 const Footer = () => {
   const socials = [
