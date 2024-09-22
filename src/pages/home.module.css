@@ -1,19 +1,19 @@
 .heroContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     position: absolute;
     bottom: 2rem;
-    left: 2rem;
+    left: 5rem;
     z-index: 10;
     box-sizing: border-box;
     text-align: left;
 }
 
 .introTitle {
-    grid-column: 1 / 2;
+    grid-column: 1 / 4;
     grid-row: 1 / 2;
     justify-self: start;
     align-self: start;
@@ -28,11 +28,12 @@
 }
 
 .heroTitle {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
     justify-self: start;
     align-self: start;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-wrap: nowrap;
     margin: 0;
     animation: fadeIn 20s ease-out infinite;
     color: #ffffff;
@@ -43,7 +44,7 @@
 }
 
 .subHeroTitle {
-    grid-column: 2 / 2;
+    grid-column: 3 / 4;
     grid-row: 3 / 4;
     justify-self: start;
     align-self: start;

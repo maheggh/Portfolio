@@ -37,8 +37,8 @@ const ThreeDModel = ({ modelPath }) => {
     <primitive
       ref={objectRef}
       object={gltf.scene}
-      scale={[0.5, 0.5, 0.5]}
-      position={[0, 20, 0]}
+      scale={[1200, 1200, 1200]}
+      position={[0, -10, 0]}
     />
   );
 };

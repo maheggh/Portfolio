@@ -1,11 +1,11 @@
 Model Information:
-* title:	Coffee Shop
-* source:	https://sketchfab.com/3d-models/coffee-shop-3c1aa6f9c758406b9ebbf3df94f2e022
-* author:	3d.xyz (https://sketchfab.com/webuild)
+* title:	Matcha Latte Cat | Hand-Painted
+* source:	https://sketchfab.com/3d-models/matcha-latte-cat-hand-painted-27d8f85e90a54e32b29e0449dd9ff243
+* author:	NoodleBaguette (https://sketchfab.com/NoodleBaguette)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Coffee Shop" (https://sketchfab.com/3d-models/coffee-shop-3c1aa6f9c758406b9ebbf3df94f2e022) by 3d.xyz (https://sketchfab.com/webuild) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Matcha Latte Cat | Hand-Painted" (https://sketchfab.com/3d-models/matcha-latte-cat-hand-painted-27d8f85e90a54e32b29e0449dd9ff243) by NoodleBaguette (https://sketchfab.com/NoodleBaguette) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
