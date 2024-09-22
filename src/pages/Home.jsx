@@ -48,7 +48,7 @@ const Home = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024); // Hide the 3D model on screen widths <= 1024px
     };
 
     handleResize(); // Check on initial load
@@ -57,17 +57,22 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative overflow-x-hidden">
-      {" "}
-      {/* Ensures no horizontal scroll */}
+    <div className="relative">
       <div className="h-screen w-full relative">
         {isMobile ? (
           <div className={styles.mobileImageContainer}>
-            <img
-              src="../assets/3d/3d.jpg"
-              alt="3D Model"
-              className={styles.mobileImage}
-            />
+            {/* Use different images based on orientation */}
+            <picture>
+              <source
+                media="(orientation: landscape)"
+                srcSet="../assets/3d/3d-2.jpg"
+              />
+              <img
+                src="../assets/3d/3d.jpg"
+                alt="3D Model Placeholder"
+                className={styles.mobileImage}
+              />
+            </picture>
           </div>
         ) : (
           <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
@@ -87,13 +92,16 @@ const Home = () => {
           <p className={styles.subHeroTitle}>I create things for the web</p>
         </div>
       </div>
+
       <div id="about">
         <About />
       </div>
+
       <div id="projects">
         <Projects />
       </div>
-      <div id="contact">
+
+      <div id="contact" className="">
         <Contact />
       </div>
     </div>
