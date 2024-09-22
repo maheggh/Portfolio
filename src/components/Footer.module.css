@@ -1,0 +1,117 @@
+/* Footer Styles */
+.footerContainer {
+    background: linear-gradient(to right, #1f1f1f, #1a1a1a);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.footerContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text Styling */
+.footerText {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footerAuthor {
+    font-weight: 800;
+    background: linear-gradient(to right, #a855f7, #ec4899, #ef4444);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Social Icons */
+.socialContainer {
+    display: flex;
+    gap: 2rem;
+    /* Increased gap for better spacing */
+    margin: 2rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+}
+
+.socialLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.socialLink:hover {
+    transform: scale(1.1);
+}
+
+.socialIconWrapper {
+    background-color: white;
+    padding: 0.75rem;
+    /* Increased padding for better shape */
+    border-radius: 50%;
+    /* Ensure circular shape */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialIcon {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Ensure roundness */
+}
+
+.socialLabel {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #b0bec5;
+}
+
+/* Rights Text */
+.footerRights {
+    font-size: 0.85rem;
+    color: #b0bec5;
+    margin-top: 1rem;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .footerContent {
+        padding: 0 1rem;
+    }
+
+    .footerText {
+        font-size: 1.1rem;
+    }
+
+    .socialContainer {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        /* Slightly increased gap */
+    }
+
+    .socialIconWrapper {
+        padding: 0.5rem;
+        /* Reduced padding for smaller screens */
+    }
+
+    .socialIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .footerRights {
+        font-size: 0.8rem;
+    }
+}
