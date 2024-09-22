@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./footer.module.css"; // Import the CSS module
 
 const Footer = () => {
   const socials = [
@@ -25,36 +26,36 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-10">
-      <div className="container mx-auto text-left">
-        <p className="text-2xl mb-8">
+    <footer className={styles.footerContainer}>
+      <div className={styles.footerContent}>
+        <p className={styles.footerText}>
           Website created by{" "}
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+          <span className={styles.footerAuthor}>
             <br />
             Martin Heggholmen
           </span>
         </p>
-        <div className="flex justify-end items-center space-x-8">
+        <div className={styles.socialContainer}>
           {socials.map((social, index) => (
             <a
               key={index}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center"
+              className={styles.socialLink}
             >
-              <div className="bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-transform transform hover:scale-110">
+              <div className={styles.socialIconWrapper}>
                 <img
                   src={social.image}
                   alt={social.name}
-                  className="w-12 h-12 rounded-full"
+                  className={styles.socialIcon}
                 />
               </div>
-              <span className="mt-2 text-sm">{social.name}</span>
+              <span className={styles.socialLabel}>{social.name}</span>
             </a>
           ))}
         </div>
-        <p className="mt-8 text-sm text-gray-400 text-right">
+        <p className={styles.footerRights}>
           &copy; {new Date().getFullYear()} Martin Heggholmen. All rights
           reserved.
         </p>

@@ -57,7 +57,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
+      {" "}
+      {/* Ensures no horizontal scroll */}
       <div className="h-screen w-full relative">
         {isMobile ? (
           <div className={styles.mobileImageContainer}>
@@ -85,16 +87,13 @@ const Home = () => {
           <p className={styles.subHeroTitle}>I create things for the web</p>
         </div>
       </div>
-
       <div id="about">
         <About />
       </div>
-
       <div id="projects">
         <Projects />
       </div>
-
-      <div id="contact" className="">
+      <div id="contact">
         <Contact />
       </div>
     </div>
