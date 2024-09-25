@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Sustainability diary",
     image: "../assets/projects/project2.png",
-    link: "https://example.com/project2",
+    link: "https://team3.sustainability.it.ntnu.no/",
     description: "Track your sustainability goals and progress with ease.",
   },
   {
