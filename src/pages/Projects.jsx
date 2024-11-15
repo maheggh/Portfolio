@@ -14,21 +14,26 @@ const projects = [
     description: "Track your sustainability goals and progress with ease.",
   },
   {
-    title: "Assessment card game",
-    image: "../assets/projects/project3.JPG",
-    link: "https://example.com/project3",
-    description: "A fun card game designed to enhance learning assessments.",
+    title: "NRK Extension",
+    image: "../assets/projects/project3.png",
+    link: "https://github.com/maheggh/NRKExtension",
+    description: "Chrome extension for filtering news for NRK.no.",
   },
-  // Add more projects as needed
+  {
+    title: "Super accessor",
+    image: "../assets/projects/project4.JPG",
+    link: "https://github.com/maheggh/cardgame",
+    description: "A card game to create assessment-methods for teachers.",
+  }
 ];
 
 const Projects = () => {
   return (
     <section id="projects" className="container mx-auto py-20 px-5">
-      <h2 className="text-4xl font-bold text-center text-blue-300 dark:text-white mb-12">
+      <h2 className="text-5xl font-bold text-center text-blue-300 dark:text-white mb-12">
         My Projects
       </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
           <a
             href={project.link}

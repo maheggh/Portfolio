@@ -29,9 +29,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
       <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-8 space-y-6">
-        <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h1 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-8">
           Contact Me
         </h1>
         <form ref={form} onSubmit={sendEmail} className="space-y-6">

@@ -35,8 +35,8 @@
     display: flex;
     flex-wrap: wrap;
     /* Allow icons to wrap when needed */
-    gap: 1.5rem;
-    justify-content: center;
+    gap: 5rem;
+    justify-content: space-between;
     margin: 2rem 0;
 }
 
@@ -88,7 +88,7 @@
     }
 
     .footerText {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .socialContainer {
@@ -96,7 +96,7 @@
         /* Ensure wrapping happens when needed */
         gap: 1rem;
         /* Adjust gap for mobile */
-        justify-content: center;
+        justify-content: space-around;
         width: 100%;
     }
 
