@@ -16,7 +16,7 @@ const projects = [
   {
     title: "NRK Extension",
     image: "../assets/projects/project3.png",
-    link: "https://github.com/maheggh/NRKExtension",
+    link: "https://chromewebstore.google.com/detail/nrk-filter/hhiajgpkhnbonhlfcgodaphjcahjajgn",
     description: "Chrome extension for filtering news for NRK.no.",
   },
   {
