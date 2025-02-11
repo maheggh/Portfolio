@@ -61,6 +61,7 @@ const Navbar = () => {
           <img src={HeroImg} alt="Home" className="w-10 h-auto rounded-lg" />
         </button>
         <nav className="hidden md:flex text-lg gap-7 font-medium items-center">
+          
           <button
             onClick={() => scrollToSection("about")}
             className="text-black dark:text-white focus:outline-none"

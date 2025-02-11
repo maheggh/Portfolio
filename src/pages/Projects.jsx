@@ -1,63 +1,90 @@
+// pages/Projects.jsx
 import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./projects.module.css"; // Our custom CSS module
 
 const projects = [
   {
-    title: "Mafia game",
+    id: "1",
+    title: "Mafia Game",
     image: "../assets/projects/project1.png",
-    link: "https://heggh.no/potatogame/Queen%20of%20potato/index.html",
+    externalLink: "https://heggh.no/potatogame/Queen%20of%20potato/index.html",
     description: "An interactive multiplayer Mafia game with unique twists.",
+    details: "Detailed information about the Mafia Game project, including tech stack, challenges, and more."
   },
   {
-    title: "Sustainability diary",
+    id: "2",
+    title: "Sustainability Diary",
     image: "../assets/projects/project2.png",
-    link: "https://team3.sustainability.it.ntnu.no/",
+    externalLink: "https://team3.sustainability.it.ntnu.no/",
     description: "Track your sustainability goals and progress with ease.",
+    details: "An in-depth look at the Sustainability Diary project, featuring design decisions and functionality details."
   },
   {
+    id: "3",
     title: "NRK Extension",
     image: "../assets/projects/project3.png",
-    link: "https://chromewebstore.google.com/detail/nrk-filter/hhiajgpkhnbonhlfcgodaphjcahjajgn",
-    description: "Chrome extension for filtering news for NRK.no.",
+    externalLink: "https://chromewebstore.google.com/detail/nrk-filter/hhiajgpkhnbonhlfcgodaphjcahjajgn",
+    description: "A Chrome extension to filter news on NRK.no.",
+    details: "All about the NRK Extension project – its features, code structure, and user experience enhancements."
   },
   {
-    title: "Super accessor",
+    id: "4",
+    title: "Super Accessor",
     image: "../assets/projects/project4.JPG",
-    link: "https://github.com/maheggh/cardgame",
-    description: "A card game to create assessment-methods for teachers.",
+    externalLink: "https://github.com/maheggh/cardgame",
+    description: "A card game to create assessment methods for teachers.",
+    details: "Detailed insights into the Super Accessor project, including gameplay mechanics and technical challenges."
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="container mx-auto py-20 px-5">
-      <h2 className="text-5xl font-bold text-center text-blue-300 dark:text-white mb-12">
-        My Projects
-      </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-        {projects.map((project, index) => (
-          <a
-            href={project.link}
-            key={index}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block group overflow-hidden rounded-lg shadow-lg transform transition-all hover:scale-105"
-          >
-            <div className="relative">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover group-hover:opacity-70 transition-opacity duration-300"
-              />
-              {/* Overlay for hover effect */}
-              <div className="absolute inset-0 flex flex-col justify-end p-4 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white font-semibold text-xl mb-2">
+    <section className={`${styles.projectsSection} py-20 px-5`}>
+      <div className="container mx-auto">
+        <h2 className={`text-5xl font-bold text-center mb-12 ${styles.sectionTitle}`}>
+          My Projects
+        </h2>
+        <div className="grid gap-12 md:grid-cols-2">
+          {projects.map((project) => (
+            <div key={project.id} className={`rounded-lg overflow-hidden ${styles.projectCard}`}>
+              {/* Clicking the image navigates to the project detail page */}
+              <Link to={`/projects/${project.id}`}>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={`w-full object-cover ${styles.projectImage}`}
+                  />
+                </div>
+              </Link>
+              <div className={`p-6 ${styles.cardContent}`}>
+                <h3 className={`text-2xl font-semibold mb-3 ${styles.projectTitle}`}>
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm">{project.description}</p>
+                <p className={`text-base mb-4 ${styles.projectDescription}`}>
+                  {project.description}
+                </p>
+                <div className="flex justify-between items-center">
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className={`px-4 py-2 rounded ${styles.detailButton}`}
+                  >
+                    View Details
+                  </Link>
+                  <a
+                    href={project.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-4 py-2 rounded ${styles.visitButton}`}
+                  >
+                    Visit Project
+                  </a>
+                </div>
               </div>
             </div>
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

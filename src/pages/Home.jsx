@@ -1,3 +1,4 @@
+// pages/Home.jsx
 import React, { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -14,12 +15,8 @@ const ThreeDModel = ({ modelPath }) => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setMousePos({
-        x: event.clientX,
-        y: event.clientY,
-      });
+      setMousePos({ x: event.clientX, y: event.clientY });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
@@ -47,11 +44,8 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024); // Hide the 3D model on screen widths <= 1024px
-    };
-
-    handleResize(); // Check on initial load
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -61,17 +55,9 @@ const Home = () => {
       <div className="h-screen w-full relative">
         {isMobile ? (
           <div className={styles.mobileImageContainer}>
-            {/* Use different images based on orientation */}
             <picture>
-              <source
-                media="(orientation: landscape)"
-                srcSet="../assets/3d/3d-2.jpg"
-              />
-              <img
-                src="../assets/3d/3d.jpg"
-                alt="3D Model Placeholder"
-                className={styles.mobileImage}
-              />
+              <source media="(orientation: landscape)" srcSet="../assets/3d/3d-2.jpg" />
+              <img src="../assets/3d/3d.jpg" alt="3D Model Placeholder" className={styles.mobileImage} />
             </picture>
           </div>
         ) : (
@@ -84,6 +70,7 @@ const Home = () => {
           </Canvas>
         )}
 
+        {/* Updated hero container with semi-transparent background */}
         <div className={styles.heroContainer}>
           <div>
             <p className={styles.introTitle}>Hi, my name is</p>
@@ -93,15 +80,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div id="about" className="py-20">
+      <div id="about" className="">
         <About />
       </div>
 
-      <div id="projects" className="py-20">
+      <div id="projects" className="">
         <Projects />
       </div>
 
-      <div id="contact" className="py-20">
+      <div id="contact" className="">
         <Contact />
       </div>
     </div>

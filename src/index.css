@@ -6,7 +6,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
+  --primary: #10375C;   /* Dark Blue */
+  --secondary: #EB8317;   /* Warm Orange */
+  --tertiary: #F3C623;    /* Golden Yellow */
+  --accent: #F4F6FF;      /* Soft Light Background */
+  --black: #000000;
+  --white: #ffffff;
   --font-sora: "Sora", sans-serif;
   --font-code: "Source Code Pro", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;

@@ -27,37 +27,38 @@ const Footer = () => {
 
   return (
     <footer className={styles.footerContainer}>
-      <div className={styles.footerContent}>
-        <p className={styles.footerText}>
-          Website created by{" "}
-          <span className={styles.footerAuthor}>
-            <br />
-            Martin Heggholmen
-          </span>
-        </p>
-        <div className={styles.socialContainer}>
-          {socials.map((social, index) => (
-            <a
-              key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-            >
-              <div className={styles.socialIconWrapper}>
-                <img
-                  src={social.image}
-                  alt={social.name}
-                  className={styles.socialIcon}
-                />
-              </div>
-              <span className={styles.socialLabel}>{social.name}</span>
-            </a>
-          ))}
+      <div className={styles.topRow}>
+        <div className={styles.footerLeft}>
+          <p className={styles.footerText}>
+            Website created by <span className={styles.footerAuthor}>Martin Heggholmen</span>
+          </p>
         </div>
+        <div className={styles.footerRight}>
+          <div className={styles.socialContainer}>
+            {socials.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                <div className={styles.socialIconWrapper}>
+                  <img
+                    src={social.image}
+                    alt={social.name}
+                    className={styles.socialIcon}
+                  />
+                </div>
+                <span className={styles.socialLabel}>{social.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className={styles.bottomRow}>
         <p className={styles.footerRights}>
-          &copy; {new Date().getFullYear()} Martin Heggholmen. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Martin Heggholmen. All rights reserved.
         </p>
       </div>
     </footer>
