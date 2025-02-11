@@ -89,7 +89,7 @@ const Home = () => {
             <p className={styles.introTitle}>Hi, my name is</p>
             <h1 className={styles.heroTitle}>Martin Heggholmen</h1>
           </div>
-          <p className={styles.subHeroTitle}>I create things for the web</p>
+          <p className={styles.subHeroTitle}>I'm a full-stack web developer</p>
         </div>
       </div>
 
