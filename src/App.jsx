@@ -23,7 +23,6 @@ const App = () => {
   return (
     <main className="bg-slate-300/200">
       <Router>
-        {/* ScrollToTop will run on every route change */}
         <ScrollToTop />
 
         <Navbar />
