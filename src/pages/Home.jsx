@@ -1,5 +1,6 @@
 // pages/Home.jsx
 import React, { useRef, useEffect, useState, Suspense } from "react";
+import { useLocation } from "react-router-dom";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -32,7 +33,6 @@ const ThreeDModel = ({ modelPath }) => {
     }
   });
 
-  
   return (
     <primitive
       ref={objectRef}
@@ -50,33 +50,46 @@ function GridBackgroundFallback() {
 
 const Home = () => {
   const [supportsWebGL, setSupportsWebGL] = useState(true);
+  const location = useLocation();
 
   // Check for WebGL support on mount
   useEffect(() => {
     setSupportsWebGL(checkWebGLSupport());
   }, []);
 
+  // If there's a hash in the URL (e.g. /#about), scroll to that element
+  useEffect(() => {
+    if (location.hash) {
+      const section = document.querySelector(location.hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="relative">
       <div className="h-screen w-full relative">
         {supportsWebGL ? (
-          // If WebGL is supported, try to render the 3D Canvas
-          <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
-            {/* Provide a fallback while the model is loading */}
-            <Suspense fallback={<GridBackgroundFallback />}>
-              <directionalLight intensity={5} position={[500, 200, 200]} />
-              <directionalLight intensity={1} position={[0, 0, -50]} />
-              <ambientLight intensity={1} />
-              <ThreeDModel modelPath="../assets/3d/scene.gltf" />
-              <OrbitControls enableZoom={false} />
-            </Suspense>
-          </Canvas>
+          // If WebGL is supported, render the 3D Canvas
+          <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
+              {/* Use fallback={null} so we don't try to render a DOM node in R3F */}
+              <Suspense fallback={null}>
+                <directionalLight intensity={5} position={[500, 200, 200]} />
+                <directionalLight intensity={1} position={[0, 0, -50]} />
+                <ambientLight intensity={1} />
+                <ThreeDModel modelPath="../assets/3d/scene.gltf" />
+                <OrbitControls enableZoom={false} />
+              </Suspense>
+            </Canvas>
+          </div>
         ) : (
-          // If no WebGL, fallback to the grid background immediately
+          // If no WebGL, show the grid background immediately
           <GridBackgroundFallback />
         )}
 
-        {/* Your hero container text */}
+        {/* Hero Container Text */}
         <div className={styles.heroContainer}>
           <div>
             <p className={styles.introTitle}>Hi, my name is</p>
@@ -86,7 +99,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Rest of the page */}
+      {/* Section Anchors */}
       <div id="about">
         <About />
       </div>

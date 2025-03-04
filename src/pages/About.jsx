@@ -40,8 +40,8 @@ const About = () => {
             className="w-48 h-48 rounded-full shadow-lg"
           />
         </div>
-        <p className={`text-xl leading-relaxed mb-6 ${styles.aboutText}`}>
-          I'm a <p className= "inline text-blue-500" >Web Developer</p> currently studying at NTNU Gjøvik.
+        <div className={`text-xl leading-relaxed mb-6 ${styles.aboutText}`}>
+          I'm a <div className= "inline text-blue-500" >Web Developer</div> currently studying at NTNU Gjøvik.
           I enjoy creating beautiful and simplistic web designs, experimenting with new
           technologies, and finding new ways to engage users.
           <br /><br />
@@ -51,9 +51,9 @@ const About = () => {
             onClick={() => scrollToSection("contact")}
             className="text-black dark:text-white focus:outline-none"
           >
-            <p className= "inline text-blue-500" >Contact me</p>
+            <div className= "inline text-blue-500" >Contact me</div>
           </button> to discuss your next web adventure!
-        </p>
+        </div>
         <h2 className={`text-2xl font-bold mb-4 ${styles.aboutTitle}`}>
           Technologies I Use
         </h2>

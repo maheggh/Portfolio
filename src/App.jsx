@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -15,11 +16,18 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackToTopButton from "./components/BackToTopButton";
 
+// NEW IMPORT:
+import ScrollToTop from "./components/ScrollToTop";
+
 const App = () => {
   return (
     <main className="bg-slate-300/200">
       <Router>
+        {/* ScrollToTop will run on every route change */}
+        <ScrollToTop />
+
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -33,8 +41,9 @@ const App = () => {
           <Route path="/projects/6" element={<Project6 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer></Footer>
-        <BackToTopButton></BackToTopButton>
+
+        <Footer />
+        <BackToTopButton />
       </Router>
     </main>
   );
