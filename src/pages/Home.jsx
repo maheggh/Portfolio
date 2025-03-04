@@ -1,5 +1,5 @@
 // pages/Home.jsx
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, Suspense } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -7,7 +7,9 @@ import styles from "./home.module.css";
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
+import { checkWebGLSupport } from "../utils/checkWebGL"; // If you put the helper in a utils folder
 
+// 3D Model Component
 const ThreeDModel = ({ modelPath }) => {
   const gltf = useLoader(GLTFLoader, modelPath);
   const objectRef = useRef();
@@ -30,6 +32,7 @@ const ThreeDModel = ({ modelPath }) => {
     }
   });
 
+  
   return (
     <primitive
       ref={objectRef}
@@ -40,37 +43,40 @@ const ThreeDModel = ({ modelPath }) => {
   );
 };
 
-const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
+// A simple fallback component that renders the grid background
+function GridBackgroundFallback() {
+  return <div className={styles.backupGridBackground} />;
+}
 
+const Home = () => {
+  const [supportsWebGL, setSupportsWebGL] = useState(true);
+
+  // Check for WebGL support on mount
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setSupportsWebGL(checkWebGLSupport());
   }, []);
 
   return (
     <div className="relative">
       <div className="h-screen w-full relative">
-        {isMobile ? (
-          <div className={styles.mobileImageContainer}>
-            <picture>
-              <source media="(orientation: landscape)" srcSet="../assets/3d/3d-2.jpg" />
-              <img src="../assets/3d/3d.jpg" alt="3D Model Placeholder" className={styles.mobileImage} />
-            </picture>
-          </div>
-        ) : (
+        {supportsWebGL ? (
+          // If WebGL is supported, try to render the 3D Canvas
           <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
-            <directionalLight intensity={2} position={[500, 500, 500]} />
-            <directionalLight intensity={1} position={[0, 0, -50]} />
-            <ambientLight intensity={1} />
-            <ThreeDModel modelPath="../assets/3d/scene.gltf" />
-            <OrbitControls enableZoom={false} />
+            {/* Provide a fallback while the model is loading */}
+            <Suspense fallback={<GridBackgroundFallback />}>
+              <directionalLight intensity={5} position={[500, 100, 100]} />
+              <directionalLight intensity={1} position={[0, 0, -50]} />
+              <ambientLight intensity={1} />
+              <ThreeDModel modelPath="../assets/3d/scene.gltf" />
+              <OrbitControls enableZoom={false} />
+            </Suspense>
           </Canvas>
+        ) : (
+          // If no WebGL, fallback to the grid background immediately
+          <GridBackgroundFallback />
         )}
 
-        {/* Updated hero container with semi-transparent background */}
+        {/* Your hero container text */}
         <div className={styles.heroContainer}>
           <div>
             <p className={styles.introTitle}>Hi, my name is</p>
@@ -80,15 +86,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div id="about" className="">
+      {/* Rest of the page */}
+      <div id="about">
         <About />
       </div>
-
-      <div id="projects" className="">
+      <div id="projects">
         <Projects />
       </div>
-
-      <div id="contact" className="">
+      <div id="contact">
         <Contact />
       </div>
     </div>
