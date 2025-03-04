@@ -64,7 +64,7 @@ const Home = () => {
           <Canvas camera={{ position: [-100, 100, 0], fov: 75 }}>
             {/* Provide a fallback while the model is loading */}
             <Suspense fallback={<GridBackgroundFallback />}>
-              <directionalLight intensity={5} position={[500, 100, 100]} />
+              <directionalLight intensity={5} position={[500, 200, 200]} />
               <directionalLight intensity={1} position={[0, 0, -50]} />
               <ambientLight intensity={1} />
               <ThreeDModel modelPath="../assets/3d/scene.gltf" />
