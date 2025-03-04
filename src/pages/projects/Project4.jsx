@@ -5,51 +5,68 @@ import styles from "../projects.module.css";
 const Project4 = () => {
   return (
     <div className="container mx-auto py-40 px-5">
+      {/* Main Title */}
       <h1 className="text-5xl font-bold mb-8">Super Accessor</h1>
 
-      {/* Media */}
-      <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project4.JPG"
-          alt="Super Accessor screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-
-      {/* Details */}
-      <div className="mt-8">
-        <p className="text-lg mb-6">
-          This project was made in collaboration with 2 other students for the full-stack development course. <br /> 
-          The goal of the project was to make a card game for teachers to create assessment methods for the students. The game is turn based <br />
-          where you can play as different characters <br />
-          <br />
-
-          <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project4img2.png"
-          alt="Super Accessor screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-
-          <br />
-          This project was created in the MERN stack (MongoDB, Express, React, Node.js) where I was responsible for the board setup, the card layout, <br />
-          the card mechanics much of the css, the gamification and the initial database setup. The cards were made in webcomponents <br />
-          the page had a login system, so you could log in as an administrator, drag and drop .csv files to easily add cards in bulk, and do <br />
-          crud operations to add, remove and update cards from the mongoDB database. The administrator had protected routes that only the admin can access. <br />
-          <br />
-          It also had the ability to print the finished game layout to PDF so that you can print and cut out the actual cards for a physical copy, if you find <br />
-          a card layout you are satisfied with. You could also save entire boards, and add invididual cards to your favorite list.
-        </p>
-
+      {/* Section 1: Overview */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Overview</h2>
         <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project4img.JPG"
-          alt="Super Accessor screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-      </div>
+          <img
+            src="../../assets/projects/project4.JPG"
+            alt="Super Accessor screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          Super Accessor is a turn-based card game designed to help teachers 
+          create innovative assessment methods. Developed by me and two other 
+          students for a full-stack development course, this project highlights 
+          collaborative design, gamification principles, and a robust MERN-based 
+          backend.
+        </p>
+      </section>
+
+      {/* Section 2: Key Features & Responsibilities */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Key Features & Responsibilities</h2>
+        
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/project4img2.png"
+            alt="Additional Super Accessor screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          Built with MongoDB, Express, React, and Node.js, Super Accessor includes:
+        </p>
+        <ul className="list-disc list-inside text-lg leading-relaxed ml-6 mt-2">
+          <li>Interactive board setup and custom card layouts</li>
+          <li>Gamification elements like unique characters</li>
+          <li>WebComponents to render dynamic card elements</li>
+          <li>Login system with role-based access and protected routes</li>
+          <li>Drag-and-drop .csv import for bulk card creation</li>
+          <li>CRUD operations to manage cards from an admin dashboard</li>
+        </ul>
+        <p className="text-lg leading-relaxed mt-4">
+          My primary responsibilities involved board setup, card layout and mechanics, 
+          significant portions of the CSS, as well as the initial database structure. 
+          I also implemented an option to save boards and favorite cards, plus the 
+          ability to print the final layout to PDF for physical card usage.
+        </p>
+      </section>
+
+      {/* Additional Media */}
+      <section className="mb-16">
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/project4img.JPG"
+            alt="Super Accessor screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+      </section>
 
       {/* Links */}
       <div className="flex gap-4">

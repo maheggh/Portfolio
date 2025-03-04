@@ -5,40 +5,53 @@ import styles from "../projects.module.css";
 const Project1 = () => {
   return (
     <div className="container mx-auto py-40 px-5">
+      {/* Main Title */}
       <h1 className="text-5xl font-bold mb-8">Mafia Game</h1>
 
-      {/* Media (Image / Video) */}
-      <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project1.png"
-          alt="Mafia Game example screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
+      {/* Section 1: Overview */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/project1.png"
+            alt="Mafia Game example screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
 
-      {/* Project details / description */}
-      <div className="mt-8">
-        <p className="text-lg mb-6">
-          This game was made entirely in HTML, CSS and Javascript. It was inspired by a game I played in my childhood called "Omerta" <br/>
-          which was an online crime game where you could steal cars, steal wallets, and do other criminal activities to rise to the top of the criminal underworld
+        <p className="text-lg leading-relaxed mt-4">
+          Inspired by the classic “Omerta” crime game, this Mafia Game 
+          is built entirely with HTML, CSS, and JavaScript. Your goal is to 
+          climb the criminal underworld hierarchy, taking on missions, 
+          stealing cars and wallets, and forging your own path to become 
+          the ultimate “Queen Potato.”
         </p>
-        <p className="text-lg mb-6">This game was entirely made by me</p>
-        <br />
-      </div>
+      </section>
 
-      <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/potatoimg1.png"
-          alt="Image of an unlucky potato getting thrown in jail"
-          className={styles.mediaItem}
-        />
-      </div>
-      <figcaption>Image of an unlucky potato getting thrown in jail</figcaption>
-      <br />
-      <p className="text-lg mb-6">The whole game has a potato related theme where the goal is to be the queen potato, it utilizes localstorage to store the progress for now <br />
-      but I am working on an online multiplayer version made in the MERN stack that stores progress in a mongoDB database</p>
+      {/* Section 2: Gameplay & Theme */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Gameplay & Theme</h2>
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/potatoimg1.png"
+            alt="Image of an unlucky potato getting thrown in jail"
+            className={styles.mediaItem}
+          />
+        </div>
+        <figcaption className="italic text-sm mt-2 mb-4">
+          An unlucky potato thrown in jail
+        </figcaption>
+        
+        <p className="text-lg leading-relaxed">
+          The entire game features a potato-themed storyline, complete 
+          with quirky characters and entertaining scenes. Player progress 
+          is currently stored in LocalStorage, but a MERN-stack upgrade 
+          (MongoDB, Express, React, Node) is in the works to support 
+          online multiplayer and persistent data.
+        </p>
+      </section>
 
-      {/* External link and navigation */}
+      {/* External Link & Back */}
       <div className="flex gap-4">
         <a
           href="https://heggh.no/potatogame/Queen%20of%20potato/index.html"

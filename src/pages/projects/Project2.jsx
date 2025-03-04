@@ -5,50 +5,69 @@ import styles from "../projects.module.css";
 const Project2 = () => {
   return (
     <div className="container mx-auto py-40 px-5">
+      {/* Main Title */}
       <h1 className="text-5xl font-bold mb-8">Sustainability Diary</h1>
 
-      {/* Media */}
-      <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project2.png"
-          alt="Sustainability Diary screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-
-      {/* Details */}
-      <div className="mt-8">
-        <p className="text-lg mb-6">
-          This is the sustainability diary I made in collaboration with 4 oher students for a course called "Webproject" <br /> <br />
-        The purpose of this web application is to make students able to sign up for classes, post notes and reflections on lectures, and share these notes with the teacher <br />
-        or other students if the student choses to do so. This project was written in the MERN stack, MongoDB, Express, React and Node.js
-        <br />
-        <br />
+      {/* Section 1: Overview */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Overview</h2>
         <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project2img.png"
-          alt="Sustainability Diary screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-        <br />
-
-          My main responsibility was to make tests, make the email forgotten password logic, make you able to join a classroom <br />
-          some styling, and the achievement system.
+          <img
+            src="../../assets/projects/project2.png"
+            alt="Sustainability Diary screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          Created for our “Webproject” course in collaboration with four teammates, 
+          the Sustainability Diary is an online platform that helps students enroll 
+          in classes, post reflections on lectures, and—optionally—share these notes 
+          with teachers or classmates.
         </p>
-        <br />
-        <br />
+      </section>
+
+      {/* Section 2: Tech Stack & Features */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Tech Stack & Features</h2>
         <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project2img2.png"
-          alt="Sustainability Diary screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-      </div>
+          <img
+            src="../../assets/projects/project2img.png"
+            alt="Sustainability Diary extended screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          Built using the MERN stack (MongoDB, Express, React, Node.js), the 
+          platform includes:
+        </p>
+        <ul className="list-disc list-inside text-lg leading-relaxed ml-6 mt-2">
+          <li>A classroom enrollment system</li>
+          <li>Ability to post and share lecture notes</li>
+          <li>Role-based access (students vs. teachers)</li>
+          <li>Email-based password recovery and achievement system</li>
+        </ul>
+      </section>
 
+      {/* Section 3: My Contributions */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">My Contributions</h2>
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/project2img2.png"
+            alt="Sustainability Diary screenshot - achievements"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          My primary responsibilities included implementing tests, building 
+          the email-based password recovery workflow, creating the classroom 
+          joining functionality, and developing the achievement system. 
+          I also handled some styling to give the platform a cohesive, 
+          user-friendly interface.
+        </p>
+      </section>
 
-      {/* Links */}
+      {/* Visit / Back Buttons */}
       <div className="flex gap-4">
         <a
           href="https://team3.sustainability.it.ntnu.no/"

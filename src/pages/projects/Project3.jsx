@@ -5,32 +5,42 @@ import styles from "../projects.module.css";
 const Project3 = () => {
   return (
     <div className="container mx-auto py-40 px-5">
+      {/* Main Title */}
       <h1 className="text-5xl font-bold mb-8">NRK Extension</h1>
 
-      {/* Media */}
-      <div className={styles.mediaContainer}>
-        <img
-          src="../../assets/projects/project3.png"
-          alt="NRK Extension screenshot"
-          className={styles.mediaItem}
-        />
-      </div>
-
-      {/* Details */}
-      <div className="mt-8">
-        <p className="text-lg mb-6">
-        NRK Filter
-        Customize your news experience on NRK.no. <br />
-         This extension automatically detects active categories on the site, giving you checkboxes to filter out the news topics you don't want to see. Not interested in sports, politics, or other specific topics?
-         Simply turn them off and enjoy a personalized news feed tailored to your interests.
-         <br />
-         <br />
-         This Webpage was entirely made by me, using regex and injections to detect categories manipulate the DOM to give you the best NRK experience <br />
-         this was written in HTML, CSS, and Javascript, and published to the chrome webstore.
+      {/* Section 1: Overview */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <div className={styles.mediaContainer}>
+          <img
+            src="../../assets/projects/project3.png"
+            alt="NRK Extension screenshot"
+            className={styles.mediaItem}
+          />
+        </div>
+        <p className="text-lg leading-relaxed mt-4">
+          The NRK Filter Extension customizes your news feed on NRK.no by 
+          hiding categories you’re not interested in—like sports or politics—giving 
+          you a cleaner, more personalized experience.
         </p>
-      </div>
+      </section>
 
-      {/* Links */}
+      {/* Section 2: Implementation Details */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-semibold mb-4">Implementation Details</h2>
+        <p className="text-lg leading-relaxed">
+          Built with HTML, CSS, and JavaScript, the extension scans NRK’s DOM 
+          to detect active categories, then injects checkbox filters so you can 
+          toggle sections on and off. Key features include:
+        </p>
+        <ul className="list-disc list-inside text-lg leading-relaxed ml-6 mt-2">
+          <li>Regular expression (regex) checks to identify article topics</li>
+          <li>DOM manipulation to hide/show unwanted categories</li>
+          <li>Seamless integration through the Chrome Web Store</li>
+        </ul>
+      </section>
+
+      {/* Visit / Back Buttons */}
       <div className="flex gap-4">
         <a
           href="https://chromewebstore.google.com/detail/nrk-filter/hhiajgpkhnbonhlfcgodaphjcahjajgn"
