@@ -1,14 +1,14 @@
-// pages/ProjectDetail.jsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import styles from "./projects.module.css";
 
-// In a real application, you might fetch this data from an API or store it in a context.
-// For this example, we reuse the projects array from Projects.jsx.
+// Updated projects array with a 'media' property for each project.
+// Note: For projects with only one image, you can include a single-item array.
 const projects = [
   {
     id: "1",
     title: "Mafia Game",
-    image: "../assets/projects/project1.png",
+    media: ["../assets/projects/project1.png"],
     externalLink: "https://heggh.no/potatogame/Queen%20of%20potato/index.html",
     description: "An interactive multiplayer Mafia game with unique twists.",
     details:
@@ -17,17 +17,16 @@ const projects = [
   {
     id: "2",
     title: "Sustainability Diary",
-    image: "../assets/projects/project2.png",
+    media: ["../assets/projects/project2.png"],
     externalLink: "https://team3.sustainability.it.ntnu.no/",
-    description:
-      "Track your sustainability goals and progress with ease.",
+    description: "Track your sustainability goals and progress with ease.",
     details:
       "An in-depth look at the Sustainability Diary project, featuring design decisions and functionality details.",
   },
   {
     id: "3",
     title: "NRK Extension",
-    image: "../assets/projects/project3.png",
+    media: ["../assets/projects/project3.png"],
     externalLink:
       "https://chromewebstore.google.com/detail/nrk-filter/hhiajgpkhnbonhlfcgodaphjcahjajgn",
     description: "A Chrome extension to filter news on NRK.no.",
@@ -37,32 +36,34 @@ const projects = [
   {
     id: "4",
     title: "Super Accessor",
-    image: "../assets/projects/project4.JPG",
+    media: ["../assets/projects/project4.JPG"],
     externalLink: "https://github.com/maheggh/cardgame",
-    description:
-      "A card game to create assessment methods for teachers.",
+    description: "A card game to create assessment methods for teachers.",
     details:
       "Detailed insights into the Super Accessor project, including gameplay mechanics and technical challenges.",
   },
   {
     id: "5",
-    title: "Super Accessor",
-    image: "../assets/projects/project4.JPG",
-    externalLink: "https://github.com/maheggh/cardgame",
+    title: "Web of Things",
+    media: [
+      "../assets/projects/project5.jpg",
+      "../assets/projects/p5video.mp4" // Video file example
+    ],
+    externalLink: "https://github.com/maheggh/WoT/tree/main",
     description:
-      "A card game to create assessment methods for teachers.",
+      "A door counter system to count people entering and exiting the library with a visual LED display",
     details:
-      "Detailed insights into the Super Accessor project, including gameplay mechanics and technical challenges.",
+      "Detailed insight into how the door counter works. This project involves hardware integration, real-time data processing, and a user-friendly visual display.",
   },
   {
     id: "6",
-    title: "Super Accessor",
-    image: "../assets/projects/project4.JPG",
-    externalLink: "https://github.com/maheggh/cardgame",
+    title: "HelseINN E-learning platform",
+    media: ["../assets/projects/project6.png"],
+    externalLink: "https://github.com/maheggh/IDG3920",
     description:
-      "A card game to create assessment methods for teachers.",
+      "Create an E-learning platform for fellesmodellen for healthcare workers.",
     details:
-      "Detailed insights into the Super Accessor project, including gameplay mechanics and technical challenges.",
+      "Detailed insights into the Fellesmodellen project, our bachelor thesis for HelseINN.",
   },
 ];
 
@@ -84,14 +85,36 @@ const ProjectDetail = () => {
   return (
     <div className="container mx-auto py-20 px-5">
       <h1 className="text-5xl font-bold mb-8">{project.title}</h1>
-      <div className="mb-8">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-auto rounded shadow-md"
-        />
+      
+      {/* Media container for images/videos */}
+      <div className={styles.mediaContainer}>
+        {project.media.map((item, index) => {
+          // Check the file extension to decide between video and image
+          if (item.endsWith(".mp4")) {
+            return (
+              <video key={index} controls className={styles.mediaItem}>
+                <source src={item} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            );
+          }
+          return (
+            <img
+              key={index}
+              src={item}
+              alt={`${project.title} media ${index + 1}`}
+              className={styles.mediaItem}
+            />
+          );
+        })}
       </div>
-      <p className="text-lg mb-6">{project.details}</p>
+
+      {/* Detailed description */}
+      <div className="mt-8">
+        <p className="text-lg mb-6">{project.details}</p>
+      </div>
+      
+      {/* Buttons for external project link and navigating back */}
       <div className="flex gap-4">
         <a
           href={project.externalLink}

@@ -28,7 +28,7 @@ const About = () => {
   
 
   return (
-    <div className={`${styles.aboutContainer} relative min-h-screen p-10 py-20 flex flex-col items-center justify-center`}>
+    <div className={`${styles.aboutContainer} relative min-h-screen p-10 py-40 flex flex-col items-center justify-center`}>
       <div className="container mx-auto max-w-4xl text-center space-y-10">
         <h1 className={`text-5xl font-extrabold mb-4 ${styles.aboutTitle}`}>
           About Me

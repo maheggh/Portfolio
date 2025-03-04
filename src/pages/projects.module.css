@@ -23,7 +23,7 @@
   .imageContainer {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 400px;
   }
   
   .projectImage {
@@ -96,3 +96,26 @@
     color: #fff;
   }
   
+
+.mediaItem {
+  max-width: 500%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mediaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: left;
+  margin-bottom: 2rem;
+}
+
+.mediaItem {
+  max-width: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

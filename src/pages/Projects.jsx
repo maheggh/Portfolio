@@ -1,7 +1,7 @@
 // pages/Projects.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./projects.module.css"; // Our custom CSS module
+import styles from "./projects.module.css";
 
 const projects = [
   {
@@ -35,14 +35,30 @@ const projects = [
     externalLink: "https://github.com/maheggh/cardgame",
     description: "A card game to create assessment methods for teachers.",
     details: "Detailed insights into the Super Accessor project, including gameplay mechanics and technical challenges."
+  },
+  {
+    id: "5",
+    title: "Web of things",
+    image: "../assets/projects/project5.jpg",
+    externalLink: "https://github.com/maheggh/WoT/tree/main",
+    description: "A door counter system to count people entering and exiting the library with a visual LED display",
+    details: "Detailed insight in to how the doorcounter works."
+  },
+  {
+    id: "6",
+    title: "HelseINN E-learning platform",
+    image: "../assets/projects/project6.png",
+    externalLink: "https://github.com/maheggh/IDG3920",
+    description: "Create an E-learning platform for fellesmodellen for healthcare workers.",
+    details: "Detailed insights into the Fellesmodellen project, our bachelor thesis for HelseINN."
   }
 ];
 
 const Projects = () => {
   return (
-    <section className={`${styles.projectsSection} py-20 px-5`}>
+    <section className={`${styles.projectsSection} py-40 px-5`}>
       <div className="container mx-auto">
-        <h2 className={`text-5xl font-bold text-center mb-12 ${styles.sectionTitle}`}>
+        <h2 className={`text-6xl font-bold text-center mb-12 ${styles.sectionTitle}`}>
           My Projects
         </h2>
         <div className="grid gap-12 md:grid-cols-2">
