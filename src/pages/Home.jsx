@@ -8,7 +8,7 @@ import styles from "./home.module.css";
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
-import { checkWebGLSupport } from "../utils/checkWebGL"; // If you put the helper in a utils folder
+import { checkWebGLSupport } from "../utils/checkWebGl"; // If you put the helper in a utils folder
 
 // 3D Model Component
 const ThreeDModel = ({ modelPath }) => {
