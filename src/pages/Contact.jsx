@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-300 dark:from-blue-800 dark:to-gray-900 flex items-center justify-center">
       <div className="w-full max-w-6xl bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-10 space-y-20">
         <h1 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-8">
           Contact Me

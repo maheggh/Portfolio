@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5140.89 1652">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0c6a84;
+      }
+
+      .cls-2 {
+        fill: #69f2fa;
+      }
+
+      .cls-3 {
+        fill: #21e0f3;
+      }
+
+      .cls-4 {
+        fill: #14bbdd;
+      }
+
+      .cls-5 {
+        fill: #b8f8fa;
+      }
+
+      .cls-6 {
+        fill: #4cedf7;
+      }
+
+      .cls-7 {
+        fill: #2d889b;
+      }
+
+      .cls-8 {
+        fill: #dbeafe;
+      }
+    </style>
+  </defs>
+  <circle class="cls-4" cx="562.1" cy="682.66" r="93.55" transform="translate(-318.08 597.41) rotate(-45)"/>
+  <circle class="cls-4" cx="187.11" cy="94.97" r="93.55" transform="translate(-12.35 160.12) rotate(-45)"/>
+  <circle class="cls-4" cx="234.45" cy="894.1" r="93.55" transform="translate(-563.55 427.66) rotate(-45)"/>
+  <circle class="cls-3" cx="1328.88" cy="963.32" r="93.55" transform="translate(-291.95 1221.81) rotate(-45)"/>
+  <circle class="cls-2" cx="2919.3" cy="1096.81" r="93.55" transform="translate(79.48 2385.5) rotate(-45)"/>
+  <circle class="cls-5" cx="93.55" cy="474.03" r="93.55" transform="translate(-307.79 204.99) rotate(-45)"/>
+  <circle class="cls-1" cx="623.3" cy="1276.06" r="44.39"/>
+  <circle class="cls-2" cx="379.77" cy="316.31" r="44.39"/>
+  <circle class="cls-2" cx="1765.46" cy="963.32" r="44.39"/>
+  <circle class="cls-1" cx="995.41" cy="776.21" r="25.29" transform="translate(-219.13 432.34) rotate(-22.14)"/>
+  <circle class="cls-7" cx="335.38" cy="25.29" r="25.29" transform="translate(80.35 244.56) rotate(-45)"/>
+  <circle class="cls-4" cx="424.16" cy="905.76" r="25.29" transform="translate(-516.23 565.21) rotate(-45)"/>
+  <circle class="cls-6" cx="3878.32" cy="986.09" r="25.29" transform="translate(438.66 3031.21) rotate(-45)"/>
+  <circle class="cls-2" cx="4381.03" cy="1003.25" r="25.29" transform="translate(573.77 3391.7) rotate(-45)"/>
+  <circle class="cls-5" cx="598.01" cy="366.72" r="25.29"/>
+  <circle class="cls-5" cx="1020.7" cy="1150.43" r="25.29" transform="translate(-331.62 1882.93) rotate(-76.86)"/>
+  <circle class="cls-5" cx="1541.27" cy="1197.21" r="25.29" transform="translate(-340.83 680.95) rotate(-22.5)"/>
+  <circle class="cls-5" cx="3376.45" cy="1150.43" r="25.29" transform="translate(1700.03 4299) rotate(-80.78)"/>
+  <circle class="cls-5" cx="785.12" cy="1056.88" r="44.39"/>
+  <circle class="cls-5" cx="2062.63" cy="1150.43" r="93.55" transform="translate(-209.35 1795.46) rotate(-45)"/>
+  <circle class="cls-1" cx="3607.19" cy="1057.37" r="25.29"/>
+  <circle class="cls-1" cx="4074.97" cy="1250.77" r="25.29" transform="translate(1921.42 4929.36) rotate(-76.72)"/>
+  <circle class="cls-1" cx="3233.76" cy="1301.35" r="25.29" transform="translate(1224.25 4149.61) rotate(-76.72)"/>
+  <circle class="cls-1" cx="4457.6" cy="894.1" r="15.39" transform="translate(673.38 3413.88) rotate(-45)"/>
+  <circle class="cls-1" cx="3945.8" cy="924.87" r="15.39"/>
+  <circle class="cls-1" cx="1780.43" cy="994.55" r="15.39" transform="translate(513.53 2592.68) rotate(-80.78)"/>
+  <circle class="cls-1" cx="3087.24" cy="1249.67" r="15.39"/>
+  <circle class="cls-1" cx="2575.43" cy="1280.44" r="15.39" transform="translate(737.53 3492.79) rotate(-76.72)"/>
+  <circle class="cls-1" cx="3960.16" cy="1249.67" r="15.39"/>
+  <circle class="cls-1" cx="3448.35" cy="1280.44" r="15.39" transform="translate(1632.08 4479.17) rotate(-80.78)"/>
+  <circle class="cls-1" cx="5092.89" cy="1120.13" r="15.39" transform="translate(2832.63 5819.43) rotate(-76.72)"/>
+  <circle class="cls-1" cx="4581.08" cy="1150.9" r="15.39"/>
+  <circle class="cls-1" cx="2416.28" cy="1243.98" r="25.29" transform="translate(650.43 3309.82) rotate(-76.72)"/>
+  <circle class="cls-1" cx="360.67" cy="575.48" r="25.29" transform="translate(-281.72 795.91) rotate(-76.86)"/>
+  <circle class="cls-1" cx="1207.81" cy="1276.06" r="25.29" transform="translate(-311.62 2158.38) rotate(-76.72)"/>
+  <circle class="cls-1" cx="829.51" cy="757.8" r="25.29" transform="translate(-292.89 808.51) rotate(-45)"/>
+  <circle class="cls-1" cx="1765.46" cy="1276.06" r="25.29" transform="translate(-385.22 1622.12) rotate(-45)"/>
+  <path class="cls-8" d="M140.89,894.1v757.9h5000v-807.52s-1078.91,435.39-1937.4,530.78c-858.5,95.39-2250.96,116.31-3062.6-481.16Z"/>
+</svg>

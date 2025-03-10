@@ -56,7 +56,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className={`${styles.projectsSection} py-40 px-5`}>
+    <section className={`${styles.projectsSection} py-40 min-h-screen from-blue-200 to-blue-200 dark:from-blue-800 dark:to-gray-900 flex items-center justify-center`}>
       <div className="container mx-auto">
         <h2 className={`text-6xl font-bold text-center mb-12 ${styles.sectionTitle}`}>
           My Projects

@@ -1,14 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
 
-const ThreeDModel = ({ modelPath }) => {
+const ThreeDModel = ({ modelPath, modelScale = 1000, positionY = 20 }) => {
   const gltf = useLoader(GLTFLoader, modelPath);
   const objectRef = useRef();
 
-  // Load the base color texture and bump map
+  // Load the base color & bump map
   const latteBaseColor = useLoader(
     THREE.TextureLoader,
     "/assets/3d/textures/LatteMAT1_baseColor.png"
@@ -18,34 +17,26 @@ const ThreeDModel = ({ modelPath }) => {
     "/assets/3d/textures/Saucers_etcMAT1_baseColor.png"
   );
 
-  // Apply the textures to the model
+  // Apply textures
   useEffect(() => {
     if (gltf && gltf.scene) {
       gltf.scene.traverse((child) => {
         if (child.isMesh && child.material) {
-          // Apply base color texture
           child.material.map = latteBaseColor;
-
-          // Apply bump map
           child.material.bumpMap = saucerBumpMap;
-          child.material.bumpScale = 0.05; // Adjust bump intensity as needed
-
+          child.material.bumpScale = 0.05; 
           child.material.needsUpdate = true;
         }
       });
     }
   }, [gltf, latteBaseColor, saucerBumpMap]);
 
+  // Rotation logic
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setMousePos({
-        x: event.clientX,
-        y: event.clientY,
-      });
+      setMousePos({ x: event.clientX, y: event.clientY });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
@@ -63,8 +54,8 @@ const ThreeDModel = ({ modelPath }) => {
     <primitive
       ref={objectRef}
       object={gltf.scene}
-      scale={[1000, 1000, 1000]}
-      position={[0, 20, 0]}
+      scale={[modelScale, modelScale, modelScale]}
+      position={[0, positionY, 0]}  // keep a default offset if you want
     />
   );
 };

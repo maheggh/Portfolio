@@ -1,155 +1,137 @@
-/* General Styles */
-.heroContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+.homeWrapper {
     width: 100%;
-    height: 85vh;
-    position: absolute;
-    bottom: 2rem;
-    left: 5rem;
-    z-index: 10;
-    box-sizing: border-box;
-    text-align: left;
-}
-
-.introTitle {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
-    justify-self: start;
-    align-self: start;
-    font-size: 1.2rem;
-    margin: 0;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 20s ease-out infinite;
-}
-
-.heroTitle {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    justify-self: start;
-    align-self: start;
-    font-size: 2.5rem;
-    line-height: 1.5;
-    margin: 0;
-    color: #fff;
-    background-color: rgba(44, 44, 44, 0.897);
-    padding: 1rem 1.5rem;
-    border-radius: 5px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 20s ease-out infinite;
-}
-
-.subHeroTitle {
-    grid-column: 2 / span 3;
-    grid-row: 3 / 4;
-    justify-self: center;
-    align-self: center;
-    font-size: 1.25rem;
-    margin: 0;
-    color: #333b3f;
-    background-color: rgba(255, 255, 255, 0.991);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0px 4px 15px rgba(0, 13, 188, 0.2);
-    animation: fadeIn 20s ease-out infinite;
-    width: auto;
-    /* Adjust width automatically */
-    max-width: 90vw;
-    /* Ensure it doesn't overflow the screen */
-    text-align: center;
-    /* Center text inside the element */
-}
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 1;
-        transform: translateY(20px);
-    }
-
-    50% {
-        opacity: 0.9;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(20px);
-    }
-}
-
-/* Media Queries for Mobile */
-@media (max-width: 1024px) {
-    .heroContainer {
-        grid-template-columns: 1fr;
-        left: 1rem;
-        bottom: 1rem;
-        width: 95%;
-        text-align: center;
-        justify-items: center;
-    }
-
-    .introTitle,
-    .heroTitle,
-    .subHeroTitle {
-        grid-column: 1 / 2;
-        justify-self: center;
-        align-self: center;
-        width: 90vw;
-        max-width: 100%;
-        text-align: center;
-        padding: 0.5rem 1rem;
-    }
-
-    .heroTitle {
-        font-size: 2rem;
-    }
-
-    .subHeroTitle {
-        font-size: 1.25rem;
-    }
-}
-
-/* Mobile Image Adjustments */
-.mobileImageContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-}
-
-.mobileImage {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
-
-/* Prevent horizontal scrolling */
-html,
-body {
     overflow-x: hidden;
-}
-
-.backupGridBackground {
+  }
+  
+  .canvasWrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .fallbackImage {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+  }
+  
+  /* Adjust the hero overlay container so it doesn’t get clipped */
+  .heroOverlay {
+    position: absolute;
+    top: 80px;    /* leaves space for fixed navbar */
+    left: 0;
+    right: 0;
+    bottom: 40px; /* ensures bottom text isn’t cut off */
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Top text container - top left */
+  .topText {
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: 0; 
-    background-color: #fafafa;
-    background-image:
-      linear-gradient(90deg, rgba(0,0,0,0.07) 1px, transparent 1px),
-      linear-gradient(rgba(0,0,0,0.07) 1px, transparent 1px);
-    background-size: 40px 40px; /* Grid cell size */
-    background-position: 0 0, 0 0;
+    left: 20px;
+    padding: 1rem;
+    pointer-events: auto;
+    max-width: 90vw;
+  }
+  
+  .topText p {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInDown 1s forwards 0.2s;
+  }
+  
+  /* Bottom text container - bottom right */
+  .bottomText {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    padding: 1rem;
+    pointer-events: auto;
+    text-align: right;
+    max-width: 90vw;
+  }
+  
+  .bottomText h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #392bff, #402ee5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 2rem 2rem;
+    border-radius: 12px;
+    text-align: right;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.4s;
+    margin-bottom: 1rem;
+  }
+    
+  .bottomText p {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: right;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.6s;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Tablet/Mobile adjustments */
+  @media (max-width: 1024px) {
+    .topText p {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      padding: 1rem 1.5rem;
+    }
+    .bottomText h1 {
+      font-size: clamp(2.5rem, 1vw, 4.5rem);
+      padding: 1rem 1.5rem;
+      text-align: left;
+      line-height: 1;
+    }
+    .bottomText p {
+      font-size: clamp(1.8rem, 4vw, 2rem);
+      padding: 1rem 1.5rem;
+    }
   }
   

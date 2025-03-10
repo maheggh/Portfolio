@@ -28,6 +28,7 @@ const About = () => {
   
 
   return (
+    <div className={`${styles.aboutpage}`}>
     <div className={`${styles.aboutContainer} relative min-h-screen p-10 py-40 flex flex-col items-center justify-center`}>
       <div className="container mx-auto max-w-4xl text-center space-y-10">
         <h1 className={`text-5xl font-extrabold mb-4 ${styles.aboutTitle}`}>
@@ -59,7 +60,7 @@ const About = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-12">
           {Icons.map(({ component: Icon, alt }, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div key={index} className="flex flex-col items-center z-5">
               <a
                 href={techLinks[alt]}
                 target="_blank"
@@ -78,6 +79,7 @@ const About = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

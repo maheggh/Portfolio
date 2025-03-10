@@ -2,17 +2,34 @@
 
 /* Default (Light Mode) Styles */
 .projectsSection {
-    background: #fff;
-  }
+  position: relative;
+}
+
+/* Pseudo-element for trees image */
+.projectsSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  mix-blend-mode: multiply;
+  background: url("/assets/trees.svg") no-repeat center bottom;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
   
   .sectionTitle {
     color: #333;
   }
   
   .projectCard {
-    background: #fff;
+    background: #ffffffd3;
     border: 1px solid #e0e0e0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 2;
   }
   
   .projectCard:hover {
