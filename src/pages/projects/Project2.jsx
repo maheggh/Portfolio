@@ -11,6 +11,13 @@ const Project2 = () => {
       {/* Section 1: Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+          The task of this project was to create a digital diary for students to take notes and share ideas during or after classes <br/>
+          and if desired give access to teachers and other students to read these notes, and comment on them. The teachers can share resources <br />
+          create classrooms, and add/modify users.
+          <br/>
+          <br/>
+        </p>
         <div className={styles.mediaContainer}>
           <img
             src="../../assets/projects/project2.png"
@@ -19,10 +26,9 @@ const Project2 = () => {
           />
         </div>
         <p className="text-lg leading-relaxed mt-4">
-          Created for our “Webproject” course in collaboration with four teammates, 
-          the Sustainability Diary is an online platform that helps students enroll 
-          in classes, post reflections on lectures, and—optionally—share these notes 
-          with teachers or classmates.
+          This website made for our “Webproject” course in collaboration with four classmates, we started with the ideation phase, with sketches <br/>
+          low-fi prototypes, roadmaps, personas, sitemaps, high-fi prototypes, and had to communicate our progress to the project owner at every milestone.
+          We used the scrum method for frequent meetings, and we used github issues to divide tasks.
         </p>
       </section>
 
@@ -37,8 +43,10 @@ const Project2 = () => {
           />
         </div>
         <p className="text-lg leading-relaxed mt-4">
-          Built using the MERN stack (MongoDB, Express, React, Node.js), the 
-          platform includes:
+          Built using the MERN stack (MongoDB, Express, React, Node.js) <br/> 
+          Docker for dockerizing the project for hosting <br/>
+          Swagger for documentating the endpoints <br/>
+          the platform includes:
         </p>
         <ul className="list-disc list-inside text-lg leading-relaxed ml-6 mt-2">
           <li>A classroom enrollment system</li>

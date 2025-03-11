@@ -11,6 +11,12 @@ const Project6 = () => {
       {/* Section 1: Project Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Project Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+          We found this project with help of the BeNet webpage where actual partners for our bachelor could list their projects.<br/> 
+          We found HelseINNs project interesting because it had real world applications, and we saw the oppertunity to develop something useful <br/>
+          for health personel, so we quickly applied to the project. <br/>
+        <br/>
+        </p>
         
         <div className={styles.mediaContainer}>
           <img
@@ -25,7 +31,7 @@ const Project6 = () => {
           students for Helse Innlandet (HelseINN). Our goal is to streamline training for healthcare 
           workers and project managers by introducing them to “Fellesmodellen,” a methodology built 
           upon the Double Diamond process. Fellesmodellen provides structured guidance on running 
-          health-industry projects effectively, focusing on user-centered design and iteration.
+          health-industry projects effectively, focusing on user-centered design and iteration. This project is still in progress.
         </p>
       </section>
 
@@ -89,7 +95,7 @@ const Project6 = () => {
           After completing a module, users can submit a custom form that generates 
           detailed reports. These reports can be emailed to project administrators 
           or exported as PDFs, providing timely insights into user progress and 
-          course effectiveness.
+          course effectiveness. 
         </p>
       </section>
 

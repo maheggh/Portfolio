@@ -11,6 +11,12 @@ const Project4 = () => {
       {/* Section 1: Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+          This was a task I got for the full-stack development course for our second year <br/>
+           the task was to create a tool for teachers to create accessment methods for their students in the shape of a card game. 
+          <br/>
+          <br/>
+        </p>
         <div className={styles.mediaContainer}>
           <img
             src="../../assets/projects/project4.JPG"
@@ -19,9 +25,8 @@ const Project4 = () => {
           />
         </div>
         <p className="text-lg leading-relaxed mt-4">
-          Super Accessor is a turn-based card game designed to help teachers 
-          create innovative assessment methods. Developed by me and two other 
-          students for a full-stack development course, this project highlights 
+          This project was developed by me and two other 
+          students, this project highlights 
           collaborative design, gamification principles, and a robust MERN-based 
           backend.
         </p>
@@ -39,7 +44,7 @@ const Project4 = () => {
           />
         </div>
         <p className="text-lg leading-relaxed mt-4">
-          Built with MongoDB, Express, React, and Node.js, Super Accessor includes:
+          Built with MongoDB, Express, React, and Node.js, with swagger documentation Super Accessor includes:
         </p>
         <ul className="list-disc list-inside text-lg leading-relaxed ml-6 mt-2">
           <li>Interactive board setup and custom card layouts</li>

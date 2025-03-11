@@ -80,7 +80,7 @@ const Home = () => {
   }, [location]);
 
   // Scale & camera adjustments for mobile
-  const modelScale = isMobile ? 400 : 1200;
+  const modelScale = isMobile ? 600 : 1200;
   const cameraPosition = isMobile ? [-60, 60, 0] : [-100, 100, 0];
 
   // If no WebGL, show fallback

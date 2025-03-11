@@ -11,6 +11,10 @@ const Project3 = () => {
       {/* Section 1: Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+        This was a project I made in my spare time to learn how to make extensions for the browser, and launch my own content in the chrome web store.
+        I learned a great deal on how to manipulate the DOM, use regex, work with the browser, optimize the project folder for publishing, and how the extension process works.
+        </p>
         <div className={styles.mediaContainer}>
           <img
             src="../../assets/projects/project3.png"

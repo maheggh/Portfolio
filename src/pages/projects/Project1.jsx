@@ -11,6 +11,10 @@ const Project1 = () => {
       {/* Section 1: Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+          This was a game I made in my spare time to experiment more with javascript, <br/>
+          all the different functionalities in the game made me learn a lot about the language. <br/>
+        </p>
         <div className={styles.mediaContainer}>
           <img
             src="../../assets/projects/project1.png"
@@ -20,8 +24,8 @@ const Project1 = () => {
         </div>
 
         <p className="text-lg leading-relaxed mt-4">
-          Inspired by the classic “Omerta” crime game, this Mafia Game 
-          is built entirely with HTML, CSS, and JavaScript. Your goal is to 
+          Inspired by the classic “Omerta” crime game, this Mafia Game I played as a kid.
+          It is built entirely with HTML, CSS, and JavaScript. Your goal is to 
           climb the criminal underworld hierarchy, taking on missions, 
           stealing cars and wallets, and forging your own path to become 
           the ultimate “Queen Potato.”

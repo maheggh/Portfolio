@@ -1,12 +1,13 @@
 // Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HeroImg from "/assets/home.jpg";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -41,44 +42,72 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  // Utility to determine if a link is active based on the current hash.
+  const isActive = (hash) => {
+    if (hash === "#home") {
+      return location.hash === "" || location.hash === "#";
+    }
+    return location.hash === hash;
+  };
+
   return (
     <header className="fixed w-full top-0 z-50 bg-gray-100 dark:bg-black shadow-md">
       <div className="flex items-center justify-between w-full p-4">
-        
-      <Link
-  to="/#"
-  onClick={() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setIsMenuOpen(false);
-  }}
-  aria-label="Home"
-  className="focus:outline-none"
->
-  <img src={HeroImg} alt="Home" className="w-10 h-auto rounded-lg" />
-</Link>
+        <Link
+          to="/#"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setIsMenuOpen(false);
+          }}
+          aria-label="Home"
+          className="focus:outline-none"
+        >
+          <img src={HeroImg} alt="Home" className="w-10 h-auto rounded-lg" />
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex text-lg gap-7 font-medium items-center">
           <Link
             to="/#about"
             onClick={handleNavClick}
-            className="text-black dark:text-white focus:outline-none"
+            className="group relative text-black dark:text-white focus:outline-none transition-colors duration-150"
           >
             About
+            <span
+              className={`absolute left-0 right-0 -bottom-1 h-0.5 bg-blue-500 transform origin-center transition-transform duration-150 ${
+                isActive("#about")
+                  ? "scale-x-[1]"
+                  : "scale-x-[0] group-hover:scale-x-[1]"
+              }`}
+            ></span>
           </Link>
           <Link
             to="/#projects"
             onClick={handleNavClick}
-            className="text-black dark:text-white focus:outline-none"
+            className="group relative text-black dark:text-white focus:outline-none transition-colors duration-150"
           >
             Projects
+            <span
+              className={`absolute left-0 right-0 -bottom-1 h-0.5 bg-blue-500 transform origin-center transition-transform duration-150 ${
+                isActive("#projects")
+                  ? "scale-x-[1]"
+                  : "scale-x-[0] group-hover:scale-x-[1]"
+              }`}
+            ></span>
           </Link>
           <Link
             to="/#contact"
             onClick={handleNavClick}
-            className="text-black dark:text-white focus:outline-none"
+            className="group relative text-black dark:text-white focus:outline-none transition-colors duration-150"
           >
             Contact
+            <span
+              className={`absolute left-0 right-0 -bottom-1 h-0.5 bg-blue-500 transform origin-center transition-transform duration-150 ${
+                isActive("#contact")
+                  ? "scale-x-[1]"
+                  : "scale-x-[0] group-hover:scale-x-[1]"
+              }`}
+            ></span>
           </Link>
           <button
             onClick={toggleDarkMode}
@@ -131,28 +160,28 @@ const Navbar = () => {
             <Link
               to="/#"
               onClick={handleNavClick}
-              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+              className="text-black dark:text-white focus:outline-none text-2xl py-4 transition-colors duration-150"
             >
               Home
             </Link>
             <Link
               to="/#about"
               onClick={handleNavClick}
-              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+              className="text-black dark:text-white focus:outline-none text-2xl py-4 transition-colors duration-150"
             >
               About
             </Link>
             <Link
               to="/#projects"
               onClick={handleNavClick}
-              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+              className="text-black dark:text-white focus:outline-none text-2xl py-4 transition-colors duration-150"
             >
               Projects
             </Link>
             <Link
               to="/#contact"
               onClick={handleNavClick}
-              className="text-black dark:text-white focus:outline-none text-2xl py-4"
+              className="text-black dark:text-white focus:outline-none text-2xl py-4 transition-colors duration-150"
             >
               Contact
             </Link>

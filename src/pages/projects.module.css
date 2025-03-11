@@ -3,7 +3,22 @@
 /* Default (Light Mode) Styles */
 .projectsSection {
   position: relative;
+  transform: translateY(1px);
+  transform: scale(1.01)
 }
+
+canvas, svg {
+  display: block;
+  vertical-align: bottom;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 
 /* Pseudo-element for trees image */
 .projectsSection::after {

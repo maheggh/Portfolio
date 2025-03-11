@@ -11,6 +11,12 @@ const Project5 = () => {
       {/* Section 1: Project Overview */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Project Overview</h2>
+        <p className="text-lg leading-relaxed mt-4">
+          This was made for the Web of things course, a course where we learned a lot on how different devices communicate with eachother, <br/> 
+          what protocols they use, how we can connect them together. We also got to visit vitensenteret in Gjøvik and get valuable insights from employees. <br/>
+          Our task for this course was to make a WoT device that served a purpose, where devices communicated with eachother to accomplish a goal. <br/>
+          <br/>
+        </p>
         <div className={styles.mediaContainer}>
           <img
             src="../../assets/projects/project5.jpg"
