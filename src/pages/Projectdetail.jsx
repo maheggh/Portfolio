@@ -59,7 +59,7 @@ const projects = [
     id: "6",
     title: "HelseINN E-learning platform",
     media: ["../assets/projects/project6.png"],
-    externalLink: "https://github.com/maheggh/IDG3920",
+    externalLink: "https://idg3920-production-8276.up.railway.app/",
     description:
       "Create an E-learning platform for fellesmodellen for healthcare workers.",
     details:
