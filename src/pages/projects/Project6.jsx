@@ -102,7 +102,7 @@ const Project6 = () => {
       {/* Visit / Back Buttons */}
       <div className="flex gap-4">
         <a
-          href="https://github.com/maheggh/IDG3920"
+          href="https://idg3920-production-8276.up.railway.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
