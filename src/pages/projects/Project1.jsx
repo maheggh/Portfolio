@@ -58,7 +58,7 @@ const Project1 = () => {
       {/* External Link & Back */}
       <div className="flex gap-4">
         <a
-          href="https://heggh.no/potatogame/Queen%20of%20potato/index.html"
+          href="https://potatomultiplayer-production.up.railway.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"

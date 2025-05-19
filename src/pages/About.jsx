@@ -2,6 +2,7 @@
 import React from "react";
 import Icons from "../components/TechIcons";
 import styles from "./About.module.css";
+import {scrollToSection} from "./Home";
 
 const About = () => {
   const techLinks = {

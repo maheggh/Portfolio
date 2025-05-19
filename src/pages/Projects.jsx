@@ -8,7 +8,7 @@ const projects = [
     id: "1",
     title: "Mafia Game",
     image: "../assets/projects/project1.png",
-    externalLink: "https://heggh.no/potatogame/Queen%20of%20potato/index.html",
+    externalLink: "https://potatomultiplayer-production.up.railway.app/",
     description: "An interactive multiplayer Mafia game with unique twists.",
     details: "Detailed information about the Mafia Game project, including tech stack, challenges, and more."
   },

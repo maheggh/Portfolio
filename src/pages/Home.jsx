@@ -49,6 +49,13 @@ function GridBackgroundFallback() {
   return <div className={styles.backupGridBackground} />;
 }
 
+export const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 const Home = () => {
   const [supportsWebGL, setSupportsWebGL] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
@@ -97,7 +104,7 @@ const Home = () => {
         </div>
         {/* Rest of the page */}
         <div id="about">
-          <About />
+          <About scrollToSection={scrollToSection} />
         </div>
         <div id="projects">
           <Projects />
